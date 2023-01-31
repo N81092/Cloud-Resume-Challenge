@@ -13,12 +13,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_instance" "app_server" {
-  ami           = "ami-00874d747dde814fa"
-  instance_type = "t2.micro"
-
-  tags = {
-     Name = "ExampleAppServerInstance"
- 	 Name = var.instance_name
-  }
+resource "aws_iam_role" "dynamodb_access" {
+  #stub
 }
