@@ -10,8 +10,8 @@ data "archive_file" "dblambdafunc" {
 
 resource "aws_lambda_function" "lambda_func" {
   filename      = "${local.lambda_zip_location}"
-  function_name = "dbcall"
-  role          = "${aws_iam_role.lambda_role.arn}"
+  function_name = "dblambdafunc"
+  role          = "${aws_iam_role.dynamodb_access}"
   handler       = "lambda_function.lambda_handler"
   source_code_hash = "${filebase64sha256(local.lambda_zip_location)}"
   runtime = "python3.8"
