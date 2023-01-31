@@ -18,12 +18,14 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 },
+{
 "resources": [
       "mode": "managed",
       "type": "aws_iam_role",
       "name": "dynamodb_access",
       "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
       "instances": [
+  }
         {
           "schema_version": 0,
           "attributes": {
